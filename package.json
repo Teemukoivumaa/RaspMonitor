@@ -1,0 +1,16 @@
+{
+  "name": "raspmonitor",
+  "version": "1.0.0",
+  "description": "Simple Raspberry Pi monitor service",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Teemu Koivumaa",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "mongodb": "^4.1.1"
+  }
+}

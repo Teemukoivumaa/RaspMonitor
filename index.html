@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+        <meta name='description' content=''>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+        <style type='text/css'>
+            .center {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                color: #fff;
+                background-color: #364652;
+	        }
+        </style>
+    </head>
+    <body class="center">
+        <h2>Devices:</h2>
+        <div class="devices">
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            console.log("Data:");
+            $.ajax({
+                url: 'http://localhost:5000/api/getDevices',
+                method:'GET',
+                data: ''
+                }).done(function(data) {
+                    console.log(data);
+                    $('div.devices').append("<h2>" + data + "</h2>");
+
+                    if(data.success) {
+                        console.log(data);
+                        
+                        //localStorage.setItem("permanentData", data.message);
+                        //var savedText = localStorage.getItem("permanentData");
+                        
+                        
+
+                        return;
+                    }
+                }).fail(function(){
+                    //do nothing ....
+                    console.log('failed...');
+                return;
+            });
+        </script>
+    </body>
+</html>
